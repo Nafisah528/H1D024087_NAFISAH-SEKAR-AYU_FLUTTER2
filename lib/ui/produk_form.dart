@@ -59,17 +59,16 @@ class _ProdukFormState extends State<ProdukForm> {
     return ElevatedButton(
       child: const Text('Simpan'),
       onPressed: () {
-        String kode = _kodeProdukController.text;
-        String nama = _namaProdukController.text;
+        String kodeProduk = _kodeProdukController.text;
+        String namaProduk = _namaProdukController.text;
         int harga = int.parse(_hargaProdukController.text);
 
-        Navigator.push(
-          context,
+        Navigator.of(context).push(
           MaterialPageRoute(
             builder: (context) => ProdukDetail(
-              kodeProduk: kode,
-              namaProduk: nama,
-              hargaProduk: harga,
+              kodeProduk: kodeProduk,
+              namaProduk: namaProduk,
+              harga: harga,
             ),
           ),
         );
